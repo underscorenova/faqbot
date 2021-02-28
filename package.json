@@ -4,17 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js --exec babel-node --presets babel-preset-env"
+    "start": "node -r esm index.js"
   },
   "dependencies": {
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
     "node": "^15.8.0"
   },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.2.2",
-    "babel-preset-env": "^1.7.0"
-  }
+  "devDependencies": {}
 }
