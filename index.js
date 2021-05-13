@@ -21,7 +21,7 @@ const colors = [
     'darkblue'
 ];
 
-const sleep = (ms) => new Promise(res => setTimeout(res, ms));
+const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
 
 const client = new Discord.Client();
 client.once('ready', () => {
@@ -32,7 +32,7 @@ client.once('ready', () => {
 client.login(TOKEN);
 
 const submit = async (message, input) => {
-    if (input.length < 2)
+    if (!input || input.length < 2)
         return message.reply(
             'You did not supply arguments correctly.\n `.submit lw-faq Error code bird...`'
         );
@@ -113,7 +113,7 @@ const uncolor = async (message, input) => {
     if (oldRole.size > 0) {
         message.member.roles.remove(oldRole);
     }
-	message.reply('Removed the color');
+    message.reply('Removed the color');
 };
 
 client.on('message', async (message) => {
