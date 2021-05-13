@@ -21,6 +21,8 @@ const colors = [
     'darkblue'
 ];
 
+const sleep = (ms) => new Promise(res => setTimeout(res, ms));
+
 const client = new Discord.Client();
 client.once('ready', () => {
     console.log('ready');
@@ -82,6 +84,7 @@ const color = async (message, input) => {
         if (oldRole.size > 0) {
             message.member.roles.remove(oldRole);
         }
+        await sleep(250);
         const newRole = roles.find((r) => r.name === input);
         message.member.roles.add(newRole);
         message.reply(`Added color ${input}`);
